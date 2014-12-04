@@ -29,5 +29,8 @@
     "asserts": "4.0.x"
   },
   "author": "Stephen Handley <stephen.handley@gmail.com> (http://person.sh)",
-  "homepage": "https://github.com/stephenhandley/requireindex"
+  "homepage": "https://github.com/stephenhandley/requireindex",
+  "dependencies": {
+    "camel-case": "^1.0.2"
+  }
 }

@@ -1,1 +1,1 @@
-module.exports = require('../../../../')(__dirname, ['again', 'somemore'])
+module.exports = require('../../../../')(__dirname, {basenames: ['again', 'somemore']})

@@ -11,6 +11,7 @@ Asserts(function () {
           [lib.bam.m,            [], "ok"],
           [lib.bar.f,            [], "yea"],
           [lib.bar.fing,         [], 'definitely'],
+          [lib.bar.fooBla,       [], 'camel case my file name'],
           [lib.Foo.l,            [], 'yes'],
           [lib.Foo.ls,           [], 'yep'],
           [lib.bam.n,            [], 'ack'],
@@ -34,7 +35,7 @@ Asserts(function () {
       "sort files by lowercase alpha of the filename": function () {
         Assert.equal(Object.keys(lib)[0], 'bam');
       },
-      
+
       "ignore dot files": function () {
         Assert.equal(('.also_private' in lib), false);
       },

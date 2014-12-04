@@ -1,1 +1,1 @@
-module.exports = require('../../../')(__dirname)
+module.exports = require('../../../')(__dirname, {convertKeysToCamelCase: true})
