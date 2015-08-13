@@ -8,15 +8,15 @@ Asserts(function () {
     "requireindex should": {
       "properly include files parallel to index.js and maintain structure": function () {
         Asserts.all.equal([
-          [lib.bam.m,            [], "ok"],
-          [lib.bar.f,            [], "yea"],
-          [lib.bar.fing,         [], 'definitely'],
-          [lib.bar.fooBla,       [], 'camel case my file name'],
+          [lib.Bam.m,            [], "ok"],
+          [lib.Bar.f,            [], "yea"],
+          [lib.Bar.fing,         [], 'definitely'],
+          [lib.Bar.foo_bla,       [], 'camel case my file name'],
           [lib.Foo.l,            [], 'yes'],
           [lib.Foo.ls,           [], 'yep'],
-          [lib.bam.n,            [], 'ack'],
-          [lib.bar.fed.again,    [], 'again'],
-          [lib.bar.fed.somemore, [], 'somemore']
+          [lib.Bam.n,            [], 'ack'],
+          [lib.Bar.fed.again,    [], 'again'],
+          [lib.Bar.fed.somemore, [], 'somemore']
         ]);
       },
 
@@ -25,7 +25,7 @@ Asserts(function () {
       },
 
       "not include files not mentioned when second array argument is used": function () {
-        Assert.equal(('ignored' in lib.bar.fed), false);
+        Assert.equal(('ignored' in lib.Bar.fed), false);
       },
 
       "ignore non javascript files": function () {
@@ -33,7 +33,7 @@ Asserts(function () {
       },
 
       "sort files by lowercase alpha of the filename": function () {
-        Assert.equal(Object.keys(lib)[0], 'bam');
+        Assert.equal(Object.keys(lib)[0], 'Bam');
       },
 
       "ignore dot files": function () {
