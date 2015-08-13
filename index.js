@@ -3,7 +3,7 @@ var Path = require('path');
 var camelCase = require('camel-case');
 
 module.exports = function (dir, opts) {
-  opts = opts || {};
+  opts = opts || { useCamelCase : true };
 
   var requires = {};
 
@@ -16,8 +16,9 @@ module.exports = function (dir, opts) {
     opts.basenames.forEach(function (basename) {
       var filepath = Path.resolve(Path.join(dir, basename));
 
-      if (opts.convertKeysToCamelCase) {
+      if (opts.useCamelCase) {
         basename = camelCase(basename);
+        basename = basename.substr(0,1).toUpperCase() + basename.substr(1);
       }
 
       requires[basename] = require(filepath);
@@ -60,8 +61,9 @@ module.exports = function (dir, opts) {
 
       var basename = Path.basename(filename, ext);
 
-      if (opts.convertKeysToCamelCase) {
+      if (opts.useCamelCase) {
         basename = camelCase(basename);
+        basename = basename.substr(0,1).toUpperCase() + basename.substr(1);
       }
 
       requires[basename] = require(filepath);
